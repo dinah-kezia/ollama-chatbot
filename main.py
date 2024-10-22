@@ -1,4 +1,4 @@
-from langchain_community.llms import Ollama
+from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
 template = """ 
@@ -11,7 +11,7 @@ Question: {question}
 Answer: 
 """
 
-llm = Ollama(model ="phi")
+llm = OllamaLLM(model ="llama-3")
 prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | llm
 
